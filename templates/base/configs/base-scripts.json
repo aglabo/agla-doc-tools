@@ -1,0 +1,15 @@
+{
+  "_comment": "@(#) : sub repository scripts templates: base-scripts.json",
+  "scripts": {
+    "prepare": "bash ./scripts/prepare.sh",
+    "clean": "pnpm rimraf dist module .cache",
+    "scan:secrets": "concurrently \"gitleaks dir --config ./configs/gitleaks.toml .\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml **/*\"",
+
+    "format:dprint": "dprint fmt",
+    "check:dprint": "dprint check",
+    "check:spells": "pnpm exec cspell --config .vscode/cspell.json --cache --cache-location .cache/cspell/cSpellCache",
+    "lint:text": "pnpm exec textlint --config ./configs/textlintrc.yaml --cache --cache-location .cache/textlintcache ",
+    "lint:markdown": "pnpm exec markdownlint-cli2 --config ./configs/.markdownlint-cli2.yaml ",
+    "sync:configs": "pnpm -w run sync:configs "
+  }
+}
