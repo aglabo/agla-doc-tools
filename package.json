@@ -30,8 +30,8 @@
     "lint:gha:actions": "pnpm exec actionlint --config-file ./configs/actionlint.yaml",
     "lint:gha:workflows": "concurrently \"pnpm exec ghalint run --config ./configs/ghalint.yaml\" \"pnpm exec ghalint act --config ./configs/ghalint.yaml\"",
     "lint:spells": "cspell --config .vscode/cspell.json --cache --cache-location .cache/cspell/cSpellCache ",
-    "lint:text": "bash runners/run-textlint.sh ",
-    "lint:markdown": "bash runners/run-markdownlint.sh "
+    "lint:text": "textlint --config ./configs/textlintrc.yaml ",
+    "lint:markdown": "markdownlint --config ./configs/.markdownlint-cli2.yaml "
   },
   "dependencies": {
     "@proofdict/textlint-rule-proofdict": "^3.1.2",
