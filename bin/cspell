@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+BINPATH="$(dirname "$0")/../node_modules/.bin"
+NODE_PATH="$(dirname "$0")/../node_modules"
+export NODE_PATH
+exec "$BINPATH/cspell" "$@"

@@ -19,22 +19,36 @@
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
     "scan:secrets": "concurrently \"betterleaks protect --config ./configs/betterleaks.toml\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml .\"",
-
     "check:sh": "bash runners/run-shfmt.sh --list .",
     "check:dprint": "dprint check",
     "format:dprint": "dprint fmt",
     "format:sh": "bash runners/run-shfmt.sh --format .",
-
     "lint:sh": "bash runners/run-shellcheck.sh ",
     "test:sh": "bash runners/run-shellspec.sh ",
     "test:sh:all": "bash runners/run-shellspec.sh all",
-
     "lint:gha": "concurrently \"pnpm run lint:gha:actions\" \"pnpm run lint:gha:workflows\"",
     "lint:gha:actions": "pnpm exec actionlint --config-file ./configs/actionlint.yaml",
     "lint:gha:workflows": "concurrently \"pnpm exec ghalint run --config ./configs/ghalint.yaml\" \"pnpm exec ghalint act --config ./configs/ghalint.yaml\"",
-
     "lint:spells": "cspell --config .vscode/cspell.json --cache --cache-location .cache/cspell/cSpellCache ",
-    "lint:text": "bash runners/run-textlint.sh ",
-    "lint:markdown": "bash runners/run-markdownlint.sh "
+    "lint:text": "textlint --config ./configs/textlintrc.yaml ",
+    "lint:markdown": "markdownlint --config ./configs/.markdownlint-cli2.yaml "
+  },
+  "dependencies": {
+    "@proofdict/textlint-rule-proofdict": "^3.1.2",
+    "@textlint-ja/textlint-rule-morpheme-match": "^2.0.0",
+    "@textlint-ja/textlint-rule-no-synonyms": "^1.3.0",
+    "@textlint-ja/textlint-rule-preset-ai-writing": "^1.7.0",
+    "cspell": "^10.0.1",
+    "markdownlint-cli2": "^0.22.1",
+    "sudachi-synonyms-dictionary": "^18.0.0",
+    "textlint-filter-rule-allowlist": "^4.0.0",
+    "textlint-filter-rule-comments": "^1.3.0",
+    "textlint-rule-common-misspellings": "^1.0.1",
+    "textlint-rule-ja-hiraku": "^1.2.0",
+    "textlint-rule-ja-no-orthographic-variants": "^2.0.0",
+    "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "^1.0.1",
+    "textlint-rule-preset-ja-spacing": "^3.0.0",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2",
+    "textlint-rule-prh": "^6.1.0"
   }
 }
