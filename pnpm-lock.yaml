@@ -35,6 +35,9 @@ importers:
       sudachi-synonyms-dictionary:
         specifier: ^18.0.0
         version: 18.0.0
+      textlint:
+        specifier: ^15.7.1
+        version: 15.7.1
       textlint-filter-rule-allowlist:
         specifier: ^4.0.0
         version: 4.0.0(textlint@15.7.1)
