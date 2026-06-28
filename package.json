@@ -16,6 +16,11 @@
     "url": "https://github.com/atsushifx/project-starter-template.git"
   },
   "type": "module",
+  "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=10"
+  },
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
     "scan:secrets": "concurrently \"betterleaks protect --config ./configs/betterleaks.toml\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml .\"",
@@ -39,7 +44,7 @@
     "@textlint-ja/textlint-rule-no-synonyms": "^1.3.0",
     "@textlint-ja/textlint-rule-preset-ai-writing": "^1.7.0",
     "cspell": "^10.0.1",
-    "js-yaml": "^4.2.0",
+    "js-yaml": "^5.2.0",
     "markdown-it": "^14.2.0",
     "markdownlint-cli2": "^0.22.1",
     "sudachi-synonyms-dictionary": "^18.0.0",
@@ -47,10 +52,9 @@
     "textlint-filter-rule-allowlist": "^4.0.0",
     "textlint-filter-rule-comments": "^1.3.0",
     "textlint-rule-common-misspellings": "^1.0.1",
-    "textlint-rule-ja-hiraku": "^1.2.0",
     "textlint-rule-ja-no-orthographic-variants": "^2.0.0",
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "^1.0.1",
-    "textlint-rule-preset-ja-spacing": "^3.0.0",
+    "textlint-rule-preset-ja-spacing": "^3.0.2",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2",
     "textlint-rule-prh": "^6.1.0"
   }
