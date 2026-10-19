@@ -51,7 +51,7 @@ git clone https://github.com/<Owner/Repository>.git
 
 ## 行動規範
 
-すべてのコントリビューターは、[行動規範](https://github.com/aglabo/.github/blob/main/.github/CODE_of_CONDUCT.ja.md) を遵守してください。
+すべてのコントリビューターは、[行動規範](https://github.com/aglabo/.github/blob/main/.github/CODE_OF_CONDUCT.ja.md) を遵守してください。
 
 ## 参考
 
