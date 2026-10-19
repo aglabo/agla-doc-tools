@@ -1,6 +1,6 @@
 {
   "name": "@aglabo/project-starter-template",
-  "version": "1.0.0",
+  "version": "0.3.0",
   "private": true,
   "description": "agla doc tools: A set of tools for documentation development.",
   "keywords": [
