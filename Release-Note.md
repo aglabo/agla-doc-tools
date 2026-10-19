@@ -9,8 +9,10 @@ Tool wrappers now share a common runner.
 ### Highlights
 
 - Lint runners resolve config files automatically
-  - markdownlint / textlint / actionlint / ghalint read the global config under `${XDG_CONFIG_HOME}` (or `~/.config`)
-  - If no global config exists, they fall back to a local config in `configs/`, and exit with an error if neither is found
+  - markdownlint / textlint / actionlint / ghalint read the global config first
+  - The global config lives under `${XDG_CONFIG_HOME}` (or `~/.config`)
+  - Without a global config, they fall back to a local config in `configs/`
+  - They exit with an error if neither config is found
   - textlint now caches results in `.cache/textlint/`
 - New lint runners for GitHub Actions workflows
   - `runners/run-actionlint.sh` and `runners/run-ghalint.sh` (read the global config, not a bundled config)
