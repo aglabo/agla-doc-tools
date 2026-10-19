@@ -7,18 +7,30 @@
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
 
+# shellcheck disable=SC1091
+
 set -euo pipefail
 
-# @description Run markdownlint and textlint against docs
-# @arg $@ string Paths to lint (passed to both linters)
+# Init Directory Variables
+. "$(dirname "${BASH_SOURCE[0]}")/libs/init-vars.lib.sh"
+
+# load util library
+. "${SCRIPT_ROOT}/libs/utils.lib.sh"
+
+# @description Run markdownlint with the global config,
+#              or with the checked-in config when the global one is absent
+# @arg $@ string Paths to lint
 # @exitcode 0 All checks passed
-# @exitcode 1 Lint error
+# @exitcode 1 Lint error or missing config file
 main() {
   local -a targets=("$@")
+  local configFile
+  configFile="$(resolve_config_file 'linters/markdownlint/.markdownlint-cli2.yaml' 'configs/.markdownlint-cli2.yaml')" || return 1
 
-  markdownlint-cli2 --config "${XDG_CONFIG_HOME}/linters/markdownlint/.markdownlint-cli2.yaml" "${targets[@]+"${targets[@]}"}"
+  markdownlint --config "${configFile}" "${targets[@]+"${targets[@]}"}"
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main "$@"
+  exit $?
 fi
