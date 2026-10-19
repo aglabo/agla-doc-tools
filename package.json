@@ -1,20 +1,20 @@
 {
   "name": "@aglabo/project-starter-template",
   "version": "1.0.0",
-  "description": "Development environment for project-starter-template",
   "private": true,
+  "description": "agla doc tools: A set of tools for documentation development.",
   "keywords": [
     "template",
     "starter",
     "oss",
     "development"
   ],
-  "author": "atsushifx",
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atsushifx/project-starter-template.git"
+    "url": "https://github.com/aglabo/agla-doc-tools.git"
   },
+  "license": "MIT",
+  "author": "atsushifx",
   "type": "module",
   "scripts": {
     "prepare": "bash ./scripts/setup-dev-env.sh",
@@ -63,5 +63,6 @@
   "engines": {
     "node": ">=24",
     "pnpm": ">=12"
-  }
+  },
+  "@(#)": "agla doc tools: A set of tools for documentation development."
 }
