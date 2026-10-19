@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# run-node-bin - shared runner for bin/ tool wrappers
+# Usage: run-node-bin <tool> [args...]
+NODE_PATH="$(dirname "$0")/../../node_modules"
+export NODE_PATH
+BINPATH="$NODE_PATH/.bin"
+TOOL="$1"
+shift
+exec "$BINPATH/$TOOL" "$@"
