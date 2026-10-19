@@ -1,37 +1,51 @@
 # Changelog
 
+## [0.3.0] - 2026-10-19
+
+### Features
+
+- Add actionlint and ghalint runners with support for global configuration files.
+- Improve runner configuration lookup, project root detection, and WSL support.
+- Add fallback configuration lookup and caching for Markdown and text linting.
+- Update development setup and Git commit hooks, including fable model support.
+- Remove obsolete shell lint runners and greeting scripts.
+
+### Refactor
+
+- Use a shared Node.js runner for cspell, markdownlint, remark, and textlint wrappers.
+
+### Configuration
+
+- Simplify editor and Git ignore settings, and update project metadata.
+- Add TOML formatting support and switch commitlint to ESM.
+- Improve git-cliff changelog grouping and classification.
+- Remove bundled lint configurations in favor of external configuration.
+
+### CI
+
+- Update reusable Betterleaks, actionlint, and ghalint workflows to v0.4.0.
+
+### Dependencies
+
+- Update documentation tools and other dependencies.
+- Upgrade the package manager to pnpm 12.14.0.
+
+### Release
+
+- Bump the project version to 0.3.0.
+
 ## [0.1.0]
 
 ### Features
 
-- *(package.json)* Add documentation linting and proofreading tools
+- Add cspell, markdownlint, and textlint with Japanese proofreading rules.
+- Add cross-platform wrappers for documentation linting tools.
 
-  - `cspell` と `markdownlint-cli2` を devDependencies に追加
-  - `textlint` および日本語校正・リントルールパッケージを追加
-  - `pnpm-lock.yaml`: cspell / markdownlint-cli2 / textlint エコシステムの推移的依存関係を追加
+### Maintenance
 
-- *(bin/\*)* Add wrapper scripts for cspell, markdownlint, and textlint
-
-  - `bin/cspell` / `bin/cspell.cmd` — `node_modules/.bin/cspell` へのラッパー
-  - `bin/markdownlint` / `bin/markdownlint.cmd` — `node_modules/.bin/markdownlint-cli2` へのラッパー
-  - `bin/textlint` / `bin/textlint.cmd` — `node_modules/.bin/textlint` へのラッパー
-
-### Miscellaneous Tasks
-
-- *(doc-tools)* Replace install script with pnpm-managed lint tools
-
-  PowerShell 製のインストールスクリプト (`templates/scripts/install-doc-tools.ps1`, 281行) を廃止し、
-  pnpm の devDependencies でドキュメントツールを管理する構成に移行。
-  `pnpm install` 一発でセットアップが完了するようになった。
-  廃止済みの PowerShell インストールスクリプトを削除
-
-- *(changelog)* Add git-cliff configuration for changelog generation
-
-  `configs/cliff.toml` を新規追加:
-  - Conventional Commits に基づくコミットパース設定
-  - GitHub squash-merge プレフィックス (`merge (#xx):`) の除去ルール
-  - feat / fix / docs / refactor / chore などをグループに割り当て
+- Replace the PowerShell installer with dependency management through pnpm.
+- Add git-cliff configuration for Conventional Commits and changelog generation.
 
 ### Dependencies
 
-- *(package)* Add `js-yaml@^4.2.0` and `markdown-it@^14.2.0` for vulnerability fixes (#3, #4)
+- Update js-yaml and markdown-it to address security vulnerabilities.
