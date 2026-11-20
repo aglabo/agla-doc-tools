@@ -1,4 +1,11 @@
 @ECHO off
+REM src: bin/cspell.cmd
+REM @(#) : cspell wrapper (cmd)
+REM
+REM Copyright (c) 2026- atsushifx https://github.com/atsushifx
+REM
+REM This software is released under the MIT License.
+REM https://opensource.org/licenses/MIT
 SETLOCAL
 SET "TOOL=cspell"
 CALL "%~dp0libs\run-node-bin.cmd" %*

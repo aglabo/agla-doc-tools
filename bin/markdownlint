@@ -1,2 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+# src: bin/markdownlint
+# @(#) : markdownlint wrapper (bash)
+#
+# Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
 exec "$(dirname "$0")/libs/run-node-bin" markdownlint-cli2 "$@"

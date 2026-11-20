@@ -110,10 +110,18 @@
 !**/.gitignore
 
 
-# ------------------------------------------------------------ ##
-##  Re-exclude: secrets and generated files                      ##
-##  Must stay last: these rules undo the broad allow rules above ##
-## ------------------------------------------------------------ ##
+## -------------------------------------------------------------
+##  Project specific
+!bin/
+!bin/**
+!bin/**/*.
+!bin/**/*.cmd
+
+
+## -------------------------------------------------------------
+##  Re-exclude: secrets and generated files
+##  Must stay last: these rules undo the broad allow rules above
+
 
 #   OS specific files
 .DS_Store
@@ -143,7 +151,6 @@ thumbs.db
 #   .env files
 **/.env*
 !.env.example
-
 
 #   API keys / credentials
 **/*.key

@@ -1,7 +1,7 @@
-// src: .remark.config.mjs
-// @(#): remark lint common configuration
+// src: configs/remark.config.mjs
+// @(#) : remark lint common configuration
 //
-// Copyright (c) 2026 Furukawa Atsushi <atsushifx@gmail.com>
+// Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
 //
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
