@@ -2,7 +2,7 @@
 REM src: bin/textlint.cmd
 REM @(#) : textlint wrapper (cmd)
 REM
-REM Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
+REM Copyright (c) 2026- atsushifx https://github.com/atsushifx
 REM
 REM This software is released under the MIT License.
 REM https://opensource.org/licenses/MIT
