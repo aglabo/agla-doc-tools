@@ -1,0 +1,29 @@
+# src: ./configs/jactionlint.yaml
+# @(#) : jactionlint configuration file
+#
+# Copyright (c) 2026- atsushifx <https://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jdx/jactionlint/main/schema/jactionlint-config.json
+
+# Profile
+profile: default
+
+# Online
+online: true  # for CI
+
+# Set the level of a rule by its ID: "error" (fails the run), "warn", "info" or
+# "off". A rule with options takes a mapping.
+rules:
+  missing-timeout: warn # lower the level of a rule the profile enables
+  require-shell: error
+  unpinned-uses:
+    level: warn
+    policies:
+      # first-party reusable workflows: tag pin is OK (not coverable by actions.lock)
+      aglabo/ci-platform: ref-pin
+  max-run-lines:
+    level: warn
+    max: 120
